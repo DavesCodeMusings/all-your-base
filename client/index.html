@@ -17,15 +17,17 @@
     <div id="base">
       <script>getBase()</script>
     </div>
-    <form action="base" enctype="application/x-www-form-urlencoded" method="post">
-      <fieldset>
-        <legend>New Base</legend>
+    <p align="right">
+      <img alt="Add" src="plus-circle.svg" height="36" width="36" onclick="document.getElementById('add-base').showModal()">
+    </p>
+    <dialog id="add-base">
+      <form action="base" enctype="application/x-www-form-urlencoded" method="post">
         <input name="name" type="text" maxlength="25" placeholder="Name">
         <input name="coordinates" class="numeric" type="text" maxlength="25" placeholder="X,Y,Z">
-        <input name="description" class="verbose" type="text" maxlength="125" placeholder="Detailed description.">
-        <input type="submit" value="Add Base">
-      </fieldset>
-    </form>
+        <input name="description" class="verbose" type="text" maxlength="125" placeholder="Description">
+        <button type="submit"><img alt="OK" src="check.svg" height="12" width="12"></button>
+        <button type="button"><img alt="Cancel" src="close.svg" height="12" width="12" onclick="document.getElementById('add-base').close()"></button>
+      </form>
+    </dialog>
   </main>
 </body>
-  
