@@ -1,23 +1,14 @@
 body {
   font-family: sans-serif;
+  margin: 1em;
 }
 
-#base {
-  margin-left: 0.8em;
-  margin-right: 0.8em;
+dialog {
+  border-radius: 5px;
 }
 
 h1 {
   text-align: center;
-}
-
-label {
-  display: inline-block;
-  width: 11em;
-}
-
-legend {
-  font-weight: bold;
 }
 
 .numeric {
