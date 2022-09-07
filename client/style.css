@@ -1,0 +1,46 @@
+body {
+  font-family: sans-serif;
+}
+
+#base {
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  display: inline-block;
+  width: 11em;
+}
+
+legend {
+  font-weight: bold;
+}
+
+.numeric {
+  text-align: right;
+}
+
+.verbose {
+  width: 25em;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background-color: whitesmoke;
+  text-align: left;
+}
+
+th, td {
+  padding-right: 2em;
+}
+
+tr:nth-of-type(even) {
+  background-color: whitesmoke;
+}
