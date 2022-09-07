@@ -29,7 +29,7 @@ async function getBase() {
     baseHTML += `
         <tr>
           <td>${base.name}</td>
-          <td class="numeric">${base.x}, ${base.y}, ${base.z}</td>
+          <td class="numeric">${base.x},${base.y},${base.z}</td>
           <td>${base.description}</td>
         </tr>
     `
