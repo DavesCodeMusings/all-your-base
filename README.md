@@ -12,3 +12,6 @@ Features:
 * Sortable columns by clicking headings in web interface.
 * All data kept in human-readable JSON file.
 * Reload JSON from file after hand edits with `kill -HUP <PID>`.
+
+Screenshot:
+![Screenshot](doc/screenshot.png)
