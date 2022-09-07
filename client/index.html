@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>All Your Base</title>
+  <script src='script.js'></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>All Your Base</h1>
+  </header>
+
+  <main>
+    <div id="base">
+      <script>getBase()</script>
+    </div>
+    <form action="base" enctype="application/x-www-form-urlencoded" method="post">
+      <fieldset>
+        <legend>New Base</legend>
+        <input name="name" type="text" maxlength="25" placeholder="Name">
+        <input name="coordinates" class="numeric" type="text" maxlength="25" placeholder="X,Y,Z">
+        <input name="description" class="verbose" type="text" maxlength="125" placeholder="Detailed description.">
+        <input type="submit" value="Add Base">
+      </fieldset>
+    </form>
+  </main>
+</body>
+  
