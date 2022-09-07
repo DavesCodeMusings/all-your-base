@@ -11,7 +11,7 @@ try {
   base = JSON.parse(readFileSync('base.json'))
 }
 catch (ex) {
-  console.warn(ex.message, 'Loading sample data instead.')
+  console.warn(ex.message, 'Creating sample data instead.')
   base[0] = {
     'name': 'Main Base',
     'x': -764,
@@ -19,7 +19,13 @@ catch (ex) {
     'z': 231,
     'description': 'Modern two-story with eco-friendly rooftop garden and free range animals. Deep mine, underwater observatory, nether portal, and more.'
   }
+  writeFileSync('base.json', JSON.stringify(base, null, 2))
 }
+
+process.on('SIGHUP', () => {
+  console.log('Refreshing data from file.')
+  base = JSON.parse(readFileSync('base.json'))
+})
 
 app.use(express.static('client'))
 app.use(express.urlencoded({extended: false}))
