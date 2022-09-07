@@ -34,10 +34,10 @@ app.post('/base', (req, res) => {
 
   let newBase = {}
   newBase.name = req.body.name.trim()
-  let [x, y, z] = req.body.coordinates.split(',').trim()
-  newBase.x = Math.round(parseFloat(x))
-  newBase.y = Math.round(parseFloat(y))
-  newBase.z = Math.round(parseFloat(z))
+  let [x, y, z] = req.body.coordinates.split(',')
+  newBase.x = Math.round(parseFloat(x.trim()))
+  newBase.y = Math.round(parseFloat(y.trim()))
+  newBase.z = Math.round(parseFloat(z.trim()))
   newBase.description = req.body.description.charAt(0).toUpperCase() + req.body.description.slice(1);
   if (newBase.description.slice(-1) != '.') {
     newBase.description += '.'
