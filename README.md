@@ -10,8 +10,13 @@ Run it like this:
 
 Features:
 * Sortable columns by clicking headings in web interface.
-* All data kept in human-readable JSON file.
-* Reload JSON from file after hand edits with `kill -HUP <PID>`.
+* Table output adjusts to fit mobile phone.
+* All backend data kept in human-readable JSON file.
+* Reload JSON from file after hand edits by sending HUP signal (e.g. `kill -HUP <PID>`).
 
-Screenshot:
+Screenshots:
 ![Screenshot](doc/screenshot.png)
+
+Adding a new base:
+* [Desktop](doc/add-base-desktop.png)
+* [Mobile](doc/add-base-mobile.png)
