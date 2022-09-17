@@ -10,7 +10,7 @@ Run it like this:
 
 Features:
 * Sortable columns by clicking headings in web interface.
-* Table output adjusts to fit mobile phone.
+* Mobile friendly design adjusts interface for smaller screen.
 * All backend data kept in human-readable JSON file.
 * Reload JSON from file after hand edits by sending HUP signal (e.g. `kill -HUP <PID>`).
 
