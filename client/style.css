@@ -15,8 +15,18 @@ h1 {
   text-align: right;
 }
 
-.verbose {
-  width: 25em;
+input {
+  margin: 0.2em;
+  width: 10em;
+}
+
+input.verbose {
+  width: 21.4em;
+}
+
+form button {
+  margin: 0.2em;
+  min-width: 4em;
 }
 
 table {
@@ -34,4 +44,24 @@ th, td {
 
 tr:nth-of-type(even) {
   background-color: whitesmoke;
+}
+
+/*
+ * For portrait mode mobile devices (i.e. your phone):
+ *   - Hide details table column to save space.
+ *   - Put details input field on its own line due to its larger width.
+ *   - Make cancel and submit buttons right justified for visual balance.
+ */
+@media screen and (max-width: 600px) {
+  table .verbose {
+    display: none;
+  }
+
+  input.verbose {
+    display: block;
+  }
+
+  .button-group {
+    float: right;
+  }
 }
