@@ -1,7 +1,7 @@
 async function getBase() {
-  let url = window.location.href.split('?')[0]  // Remove the ?query_parameter part if present.
+  let url = `${window.location.protocol}//${window.location.host}/base`
   console.debug('Server URL:', url)
-  let basePromise = await fetch(url + 'base')
+  let basePromise = await fetch(url)
   let baseList = await basePromise.json()
 
   if (window.location.search == '?sort=name') {
@@ -21,7 +21,7 @@ async function getBase() {
       <thead>
         <th><a href="/?sort=name" title="Sort by Name">Name</a></th>
         <th class="numeric"><a href="/?sort=distance" title="Sort by Distance">Coordinates</a></th>
-        <th><a href="/?sort=description" title="Sort by Description">Description</a></th>
+        <th class="verbose"><a href="/?sort=description" title="Sort by Description">Description</a></th>
       </thead>
       <tbody>
   `
@@ -30,7 +30,7 @@ async function getBase() {
         <tr>
           <td>${base.name}</td>
           <td class="numeric">${base.x},${base.y},${base.z}</td>
-          <td>${base.description}</td>
+          <td class="verbose">${base.description}</td>
         </tr>
     `
     count++
