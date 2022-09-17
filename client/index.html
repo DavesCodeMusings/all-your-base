@@ -4,8 +4,10 @@
 
 <head>
   <title>All Your Base</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src='script.js'></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="home-group.svg"
 </head>
 
 <body>
@@ -18,15 +20,21 @@
       <script>getBase()</script>
     </div>
     <p align="right">
-      <img alt="Add" src="plus-circle.svg" height="36" width="36" onclick="document.getElementById('add-base').showModal()">
+      <img alt="Add" src="plus-circle.svg" style="height: 2.2em; width: 2.2em;" onclick="document.getElementById('add-base').showModal()">
     </p>
     <dialog id="add-base">
       <form action="base" enctype="application/x-www-form-urlencoded" method="post">
+        <legend>
+          <img alt="Add" src="home-plus.svg" style="height: 24px; width: 24px; vertical-align: text-bottom;">
+          Add Your Base
+        </legend>
         <input name="name" type="text" maxlength="25" placeholder="Name">
         <input name="coordinates" class="numeric" type="text" maxlength="25" placeholder="X,Y,Z">
         <input name="description" class="verbose" type="text" maxlength="125" placeholder="Description">
-        <button type="submit"><img alt="OK" src="check.svg" height="12" width="12"></button>
-        <button type="button"><img alt="Cancel" src="close.svg" height="12" width="12" onclick="document.getElementById('add-base').close()"></button>
+        <span class="button-group">
+          <button type="button" onclick="document.getElementById('add-base').close()"><img alt="Cancel" src="close.svg" height="12" width="12"></button>
+          <button type="submit"><img alt="OK" src="check.svg" height="12" width="12"></button>
+        </span>
       </form>
     </dialog>
   </main>
