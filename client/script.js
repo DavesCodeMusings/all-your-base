@@ -4,10 +4,14 @@ async function getBase() {
   let basePromise = await fetch(url)
   let baseList = await basePromise.json()
 
-  if (window.location.search == '?sort=name') {
+  const params = new URLSearchParams(window.location.search)
+  const sortOrder = params.get('sort')
+  console.debug(`Sort order: ${sortOrder}`)
+
+  if (sortOrder == 'name') {
     baseList.sort((a,b) => a.name.localeCompare(b.name))
   }
-  else if (window.location.search == '?sort=description') {
+  else if (sortOrder == 'description') {
     baseList.sort((a,b) => a.description.localeCompare(b.description))
   }
   else {
