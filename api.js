@@ -5,10 +5,12 @@ import { createServer } from 'https'
 import express from 'express'
 const app = express()
 const port = 2101
+const baseFile = 'data/base.json'
 
 var base = []
+
 try {
-  base = JSON.parse(readFileSync('base.json'))
+  base = JSON.parse(readFileSync(baseFile))
 }
 catch (ex) {
   console.warn(ex.message, 'Creating sample data instead.')
@@ -19,12 +21,12 @@ catch (ex) {
     'z': 231,
     'description': 'Modern two-story with eco-friendly rooftop garden and free range animals. Deep mine, underwater observatory, nether portal, and more.'
   }
-  writeFileSync('base.json', JSON.stringify(base, null, 2))
+  writeFileSync(baseFile, JSON.stringify(base, null, 2))
 }
 
 process.on('SIGHUP', () => {
   console.log('Refreshing data from file.')
-  base = JSON.parse(readFileSync('base.json'))
+  base = JSON.parse(readFileSync(baseFile))
 })
 
 app.use(express.static('client'))
@@ -49,7 +51,7 @@ app.post('/base', (req, res) => {
     newBase.description += '.'
   }
   base.push(newBase)
-  writeFileSync('base.json', JSON.stringify(base, null, 2))
+  writeFileSync(baseFile, JSON.stringify(base, null, 2))
   res.redirect('/')
 })
 
