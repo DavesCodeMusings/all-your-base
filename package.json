@@ -1,0 +1,14 @@
+{
+  "name": "all-your-base",
+  "version": "0.1",
+  "description": "Keep track of Minecraft bases with this simple ExpressJS app",
+  "author": "David Horton <https://github.com/DavesCodeMusings>",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
