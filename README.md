@@ -1,18 +1,28 @@
 # all-your-base
 Keep track of Minecraft bases with this simple Node.js Express app.
 
-Run it like this:
-1. Install Node.js using the package manager for your operating system.
-2. Install Express.js witht he command: `npm install express`
-3. Optionally generate TLS certificate server.crt and server.key.
-4. Run the all-your-base API with the command: `nohup ./api.js &`
-5. Open a web browser on port 2101. (e.g. https://myserver:2101)
+Run as a Docker container using the following compose.yml:
+
+```
+services:
+  all-your-base:
+    image: davescodemusings/all-your-base:latest
+    container_name: all-your-base
+    hostname: all-your-base
+    restart: unless-stopped
+    ports:
+      - "2101:2101"
+    volumes:
+      - ./data:/app/data
+```
+
+Point your web browser to http://IP.AD.DR.ESS:2101/
 
 Features:
 * Sortable columns by clicking headings in web interface.
 * Mobile friendly design adjusts interface for smaller screen.
 * All backend data kept in human-readable JSON file.
-* Reload JSON from file after hand edits by sending HUP signal (e.g. `kill -HUP <PID>`).
+* Reload JSON from file after hand edits by sending HUP signal (e.g. `docker kill --signal="HUP" <container-id>`).
 
 Screenshots:
 ![Screenshot](doc/screenshot.png)
